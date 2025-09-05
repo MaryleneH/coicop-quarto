@@ -1,0 +1,17 @@
+---
+title: "Méthodologie"
+---
+
+### Rappel COICOP
+- Classification hiérarchique de la consommation des ménages par finalité.
+- Niveaux : **division** (2 chiffres), **groupe** (01.x), **classe** (01.x.x), **sous-classe** (01.x.x.x).
+
+### Notes sur l’IPC (contexte Insee)
+- Les **pondérations** reflètent la part des dépenses des ménages par catégorie.
+- Elles sont révisées périodiquement et varient selon l’année.
+- Le CSV inclus contient des poids **illustratifs**. Remplacez-les par des poids officiels pour l’analyse.
+
+### Fonctionnement de l’Explorateur
+- Treemap/Sunburst via Plotly : `ids = code`, `labels = label_fr`, `parents = parent`, `values = weight`.
+- Le choix d’une **racine** restreint la hiérarchie. Si des poids manquent, des tailles **uniformes** sont utilisées pour préserver la structure.
+- **Recherche** filtre par code/libellé. Le bouton **CSV** exporte la table filtrée.

@@ -1,0 +1,76 @@
+---
+title: "Explorateur"
+page-layout: full
+---
+
+```{r}
+#| warning: false
+#| message: false
+library(readr); library(dplyr); library(crosstalk); library(plotly); library(DT)
+
+# Chargement des données
+# Schéma attendu : code,label_fr,parent,level,weight
+df <- read_csv("data/coicop_example.csv", show_col_types = FALSE) |>
+  mutate(
+    division   = sub("\\..*$", "", code),
+    label      = paste(code, "—", label_fr),
+    parent     = ifelse(is.na(parent), "", parent),
+    weight     = suppressWarnings(as.numeric(weight)),
+    has_weight = !is.na(weight)
+  )
+
+# Données partagées pour crosstalk (plots + table synchronisés)
+sd <- SharedData$new(df, key = ~code, group = "coicop")
+```
+
+### Filtres
+
+```{r}
+bscols(
+  widths = c(4,4,4),
+  filter_select("div", "Division (racine)", sd, ~division, multiple = FALSE, allLevels = TRUE),
+  filter_select("lvl", "Niveau", sd, ~level, multiple = TRUE, allLevels = TRUE),
+  filter_checkbox("hasw", "Avec poids", sd, ~has_weight, inline = TRUE)
+)
+```
+
+## Visualisations {.panel-tabset}
+
+### Treemap
+
+```{r}
+plot_ly(
+  sd, type = "treemap",
+  ids = ~code, labels = ~label, parents = ~parent,
+  values = ~ifelse(has_weight, weight, 1), branchvalues = "total"
+) |>
+  layout(margin = list(t = 30, l = 10, r = 10, b = 10))
+```
+
+### Sunburst
+
+```{r}
+plot_ly(
+  sd, type = "sunburst",
+  ids = ~code, labels = ~label, parents = ~parent,
+  values = ~ifelse(has_weight, weight, 1), branchvalues = "total"
+) |>
+  layout(margin = list(t = 30, l = 10, r = 10, b = 10))
+```
+
+### Table filtrable et export
+
+```{r}
+DT::datatable(
+  sd,
+  extensions = "Buttons",
+  options = list(
+    dom = "Bfrtip",
+    buttons = c("copy", "csv"),
+    pageLength = 15,
+    autoWidth = TRUE
+  ),
+  filter = "top",
+  rownames = FALSE
+)
+```

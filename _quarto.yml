@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Explorateur COICOP"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: explorer.qmd
+        text: Explorateur
+      - href: methodology.qmd
+        text: Méthodologie
+  search: true
+  page-navigation: true
+  page-footer:
+    left: "© 2025 — Démo pédagogique (poids illustratifs)"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    css: assets/site.css
+
+lang: fr
+editor: visual

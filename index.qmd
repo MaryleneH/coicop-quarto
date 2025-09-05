@@ -1,0 +1,15 @@
+---
+title: "Explorateur COICOP"
+description: "Site Quarto statique pour parcourir la COICOP et visualiser des pondérations d’IPC (exemple)"
+---
+
+Bienvenue ! Ce site vous permet de :
+
+- Comprendre la hiérarchie **COICOP** (division → groupe → classe → sous-classe)
+- Parcourir les codes et libellés en français
+- Visualiser des pondérations **exemple** de l’IPC (non officielles)
+- Télécharger en CSV la sélection filtrée
+
+Commencez par l’onglet **Explorateur** pour la treemap/sunburst interactive et la table recherchable.
+
+> Données : les poids fournis sont **illustratifs**. Remplacez `data/coicop_example.csv` par vos pondérations officielles si besoin.

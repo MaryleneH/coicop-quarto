@@ -1,0 +1,38 @@
+code,label_fr,parent,level,weight
+01,Produits alimentaires et boissons non alcoolisées,,Division,16.0
+02,Boissons alcoolisées, tabac et stupéfiants,,Division,5.0
+03,Articles d'habillement et chaussures,,Division,4.0
+04,Logement, eau, gaz, électricité et autres combustibles,,Division,26.0
+05,Meubles, articles de ménage et entretien courant du foyer,,Division,6.0
+06,Santé,,Division,3.0
+07,Transports,,Division,15.0
+08,Communications,,Division,2.5
+09,Loisirs et culture,,Division,8.0
+10,Enseignement,,Division,0.6
+11,Hôtels, cafés et restaurants,,Division,10.0
+12,Biens et services divers,,Division,3.9
+01.1,Produits alimentaires,01,Groupe,12.5
+01.2,Boissons non alcoolisées,01,Groupe,3.5
+01.1.1,Pain et céréales,01.1,Classe,2.8
+01.1.2,Viande,01.1,Classe,3.0
+01.1.3,Poissons et fruits de mer,01.1,Classe,1.2
+01.1.4,Lait, fromage et œufs,01.1,Classe,1.8
+01.1.5,Huiles et graisses,01.1,Classe,0.5
+01.1.6,Fruits,01.1,Classe,1.1
+01.1.7,Légumes,01.1,Classe,1.1
+01.1.8,Sucre, confiserie, glaces,01.1,Classe,0.5
+01.1.9,Autres produits alimentaires n.c.a.,01.1,Classe,0.5
+01.2.1,Café, thé et cacao,01.2,Classe,0.8
+01.2.2,Eaux minérales, sodas et jus,01.2,Classe,2.7
+04.1,Logement réel (loyers),04,Groupe,10.0
+04.3,Entretien et réparation du logement,04,Groupe,3.0
+04.4,Eau et enlèvement des ordures,04,Groupe,1.5
+04.5,Électricité, gaz et autres combustibles,04,Groupe,11.5
+04.5.1,Électricité,04.5,Classe,5.0
+04.5.2,Gaz,04.5,Classe,4.0
+04.5.3,Combustibles liquides/solides,04.5,Classe,2.5
+07.1,Achat de véhicules,07,Groupe,4.0
+07.2,Exploitation des véhicules personnels,07,Groupe,8.0
+07.3,Transports de passagers,07,Groupe,3.0
+07.2.2,Carburants et lubrifiants,07.2,Classe,5.5
+07.2.3,Entretien et réparation,07.2,Classe,2.5
