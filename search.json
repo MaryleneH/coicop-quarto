@@ -11,7 +11,7 @@
     "href": "explorer.html#visualisations",
     "title": "Explorateur",
     "section": "Visualisations",
-    "text": "Visualisations\n\nTreemap\n\n\n\n\n\n\n\n\nSunburst\n\n\n\n\n\n\n\n\nTable filtrable et export\n\nDT::datatable(\n  sd,\n  extensions = \"Buttons\",\n  options = list(\n    dom = \"Bfrtip\",\n    buttons = c(\"copy\", \"csv\"),\n    pageLength = 15,\n    autoWidth = TRUE\n  ),\n  filter = \"top\",\n  rownames = FALSE\n)"
+    "text": "Visualisations\n\nTreemap\n\n\n\n\n\n\n\n\nSunburst\n\n\n\n\n\n\n\n\nTable filtrable et export"
   },
   {
     "objectID": "methodology.html",
