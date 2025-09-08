@@ -72,6 +72,9 @@ plot_ly(
 ### Table filtrable et export
 
 ```{r}
+#| echo: false
+#| output: true
+#| message: false
 DT::datatable(
   sd,
   extensions = "Buttons",
