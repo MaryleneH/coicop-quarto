@@ -6,6 +6,8 @@ page-layout: full
 ```{r}
 #| warning: false
 #| message: false
+#| echo: false
+#| output: false
 library(readr); library(dplyr); library(crosstalk); library(plotly); library(DT)
 
 # Chargement des données
@@ -26,6 +28,9 @@ sd <- SharedData$new(df, key = ~code, group = "coicop")
 ### Filtres
 
 ```{r}
+#| echo: false
+#| output: true
+#| message: false
 bscols(
   widths = c(4,4,4),
   filter_select("div", "Division (racine)", sd, ~division, multiple = FALSE, allLevels = TRUE),
@@ -39,6 +44,9 @@ bscols(
 ### Treemap
 
 ```{r}
+#| echo: false
+#| output: true
+#| message: false
 plot_ly(
   sd, type = "treemap",
   ids = ~code, labels = ~label, parents = ~parent,
@@ -50,6 +58,9 @@ plot_ly(
 ### Sunburst
 
 ```{r}
+#| echo: false
+#| output: true
+#| message: false
 plot_ly(
   sd, type = "sunburst",
   ids = ~code, labels = ~label, parents = ~parent,
